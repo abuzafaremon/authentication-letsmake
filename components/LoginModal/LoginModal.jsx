@@ -19,6 +19,9 @@ export default function LoginModal({ isOpenLogin, setIsOpenLogin }) {
     setIsOpenLogin(false);
     router.push("/welcome");
   }
+  const closeModal = () => {
+    setIsOpenLogin(false);
+  };
 
   return (
     <>
@@ -48,6 +51,12 @@ export default function LoginModal({ isOpenLogin, setIsOpenLogin }) {
                 leaveTo="opacity-0 scale-95"
               >
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                  <button
+                    onClick={closeModal}
+                    className="absolute top-2 right-2 border rounded-full w-7 h-7 bg-slate-800 text-white"
+                  >
+                    X
+                  </button>
                   <Dialog.Title
                     as="h3"
                     className="text-lg font-medium leading-6 text-gray-900"
